@@ -24,5 +24,8 @@ services:
       - SPRING_DATASOURCE_USERNAME=ainun
       - SPRING_DATASOURCE_PASSWORD=asd
       - SPRING_JPA_HIBERNATE_DDL_AUTO=update
+      - SPRING_FLYWAY_URL=jdbc:postgresql://psql-db:5431/walletapi_db
+      - SPRING_FLYWAY_USER=ainun
+      - SPRING_FLYWAY_PASSWORD=asd
     depends_on:
       - psql-db
