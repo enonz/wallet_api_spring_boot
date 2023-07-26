@@ -20,7 +20,7 @@ services:
     ports:
       - "9090:9090"
     environment:
-      - SPRING_DATASOURCE_URL=jdbc:postgresql://psql-db:5432/walletapi_db
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://psql-db:5431/walletapi_db
       - SPRING_DATASOURCE_USERNAME=ainun
       - SPRING_DATASOURCE_PASSWORD=asd
       - SPRING_JPA_HIBERNATE_DDL_AUTO=update
