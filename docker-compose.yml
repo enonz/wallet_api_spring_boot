@@ -1,0 +1,28 @@
+version: "3.8"
+
+services:
+  psql-db:
+    image: postgres
+    container_name: psql-db
+    restart: always
+    environment:
+      - POSTGRES_USER=ainun
+      - POSTGRES_PASSWORD=asd
+      - POSTGRES_DB=walletapi_db
+    ports:
+      - "5432:5432"
+
+  walletapi:
+    container_name: wallet_api
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "9090:9090"
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://psql-db:5432/walletapi_db
+      - SPRING_DATASOURCE_USERNAME=ainun
+      - SPRING_DATASOURCE_PASSWORD=asd
+      - SPRING_JPA_HIBERNATE_DDL_AUTO=update
+    depends_on:
+      - psql-db
