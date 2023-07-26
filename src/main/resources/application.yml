@@ -1,0 +1,37 @@
+spring:
+  application:
+    name: Wallet API
+  datasource:
+    initialization-mode: always
+    platform: postgres
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/walletapi_db
+    username: ainun
+    password: asd
+  jpa:
+    defer-datasource-initialization: false
+    hibernate:
+      ddl-auto: none
+    properties:
+      hibernate:
+        default_schema: public
+        jdbc:
+          lob:
+            non_contextual_creation: true
+  sql:
+    init:
+      mode: always
+  flyway: #for migrations
+    enabled: true
+    url: jdbc:postgresql://localhost:5432/walletapi_db
+    user: ainun
+    password: asd
+    schemas: public
+    locations: classpath:/db/migrations/postgresql, classpath:/db/seeds/postgresql
+    validateMigrationNaming: true
+server:
+  port: 9090
+debug: true
+logging.path: ./logs/
+logging.file: ./logs/development.log
+#logging.level.root: ERROR

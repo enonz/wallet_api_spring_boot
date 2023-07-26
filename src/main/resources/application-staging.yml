@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: Wallet API
+server:
+  port: 9091
+debug: true
+logging.path: ./logs/
+logging.file: ./logs/staging.log
