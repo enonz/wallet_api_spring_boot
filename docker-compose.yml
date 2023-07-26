@@ -9,8 +9,12 @@ services:
       - POSTGRES_USER=ainun
       - POSTGRES_PASSWORD=asd
       - POSTGRES_DB=walletapi_db
+      - POSTGRES_PORT=5431
+    expose:
+      - "5431"
+    command: -p 5431
     ports:
-      - "5431:5431"
+      - "5431:5432"
 
   walletapi:
     container_name: wallet_api
