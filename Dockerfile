@@ -1,4 +1,4 @@
-FROM openjdk:latest
+FROM openjdk:20
 VOLUME /tmp
 EXPOSE 9090
 ARG JAR_FILE=target/wallet-api-0.0.1-SNAPSHOT.jar
